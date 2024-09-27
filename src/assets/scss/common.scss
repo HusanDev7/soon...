@@ -25,7 +25,6 @@ input {
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 15px;
-    border: solid 3px black;
 }
 
 // dynamic banner here
@@ -42,4 +41,12 @@ input {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+// contents wrapp
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
 }

@@ -1,9 +1,4 @@
 .sidebar {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    right: 0;
-    bottom: 10%;
     z-index: 999;
     width: 75px;
     height: 500px;
@@ -67,6 +62,7 @@
     &__link {
         &.active {
             color: #ffffff;
+            filter: drop-shadow(-0.25em -0.25em 50px #fff);
         }
     }
 

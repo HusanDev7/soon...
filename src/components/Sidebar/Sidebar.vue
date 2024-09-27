@@ -13,9 +13,9 @@ const active = ref(1);
 
 // array's links
 const links = ref([
-    { icon: IconPeople },
-    { icon: IconChat },
-    { icon: IconSettings },
+    { icon: IconPeople, link: '/peoples/' },
+    { icon: IconChat, link: '/'},
+    { icon: IconSettings,  link: '/settings/'},
 ]);
 
 const toggle = (index) => {
@@ -34,8 +34,8 @@ const toggle = (index) => {
             <div>
                 <ul class="sidebar__list">
                     <li v-for="(item, index) in links" :key="item.index" class="sidebar__item" @click="toggle(index)">
-                        <RouterLink to="/" class="sidebar__link">
-                            <component :is="item.icon" :size="25" :class="{ active: active === index }" />
+                        <RouterLink :to="item.link" class="sidebar__link" :class="{ active: active === index }">
+                            <component :is="item.icon" :size="25" />
                         </RouterLink>
                     </li>
                 </ul>

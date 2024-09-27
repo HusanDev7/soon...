@@ -4,7 +4,9 @@ import HeaderLayout from "./layout/HeaderLayout.vue"
 
 <template>
   <div class="banner">
-    <HeaderLayout />
-    <RouterView />
+    <div class="wrapper">
+      <HeaderLayout />
+      <RouterView />
+    </div>
   </div>
 </template>
