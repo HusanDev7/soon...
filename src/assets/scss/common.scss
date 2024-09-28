@@ -50,3 +50,28 @@ input {
     justify-content: center;
     height: 100dvh;
 }
+
+// here dark mode and light mode codes
+
+.dark-mode {
+    background: rgba(9, 3, 82, 0.74);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14.7px);
+    -webkit-backdrop-filter: blur(14.7px);
+    border: 1px solid rgba(9, 3, 82, 0.35);
+    background: rgba(9, 3, 82, 0.74);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14.7px);
+    -webkit-backdrop-filter: blur(14.7px);
+    border: 1px solid rgba(9, 3, 82, 0.35);
+    color: #fff;
+}
+
+.light-mode {
+    background: rgba(255, 255, 255, 0.27);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #2f313d;
+}
