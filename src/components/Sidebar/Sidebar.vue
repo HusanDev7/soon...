@@ -1,17 +1,16 @@
 <script setup>
-import { ref, inject } from "vue";
+import { ref, inject, shallowRef } from "vue";
 import IconChat from "@/components/UI/icons/IconChat.vue";
 import IconPeople from "@/components/UI/icons/IconPeople.vue";
 import IconSettings from "@/components/UI/icons/IconSettings.vue";
 import IconDark from "@/components/UI/icons/IconDark.vue";
 import IconLight from "@/components/UI/icons/IconLight.vue";
-
 const logo = ref("H.");
 const active = ref(1);
 const mode = inject('mode');
 const toggle_mode = inject('toggle_mode');
 
-const links = ref([
+const links = shallowRef([
     { icon: IconPeople, link: '/peoples/' },
     { icon: IconChat, link: '/' },
     { icon: IconSettings, link: '/settings/' },
