@@ -41,7 +41,7 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   try {
-    const user = await account.get();
+    const user = null;
     const isAuthenticated = !!user;
 
     if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {

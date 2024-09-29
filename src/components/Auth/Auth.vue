@@ -39,7 +39,7 @@ const toggleAuth = () => {
     <div class="auth">
         <h4>{{ isLogin ? 'Login' : 'Register' }}</h4>
 
-        <form @submit.prevent="isLogin ? login() : register()">
+        <form class="auth__form" @submit.prevent="isLogin ? login() : register()">
             <input type="email" placeholder="Email" v-model="email" required />
             <input type="password" placeholder="Password" v-model="password" required />
             <input v-if="!isLogin" type="text" placeholder="Name" v-model="name" required />
