@@ -6,6 +6,12 @@
     width: 300px;
     height: 500px;
 
+    &-title {
+        font-size: 22px;
+        font-weight: 700;
+        padding: 20px 0;
+    }
+
     &__form {
         display: flex;
         justify-content: center;
@@ -18,7 +24,7 @@
             background: transparent;
             border: solid 1px #6d39fe;
             color: #fff;
-            border-radius: 10px;
+            border-radius: 6px;
         }
 
         & button {
@@ -30,9 +36,10 @@
         }
     }
 
-    &__notf {
-        font-size: 26px;
-        font-weight: 600;
-        margin: 15px 0;
+    &__toggle {
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 50px;
+        cursor: pointer;
     }
 }

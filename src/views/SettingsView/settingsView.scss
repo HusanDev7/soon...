@@ -1,4 +1,80 @@
 .settings {
     width: 300px;
     height: 500px;
+
+    &-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        &-img_box {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &-img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background-position: center;
+                background-size: cover;
+                border: solid 1px #6d39fe;
+            }
+        }
+
+        &-who {
+            text-align: center;
+            margin-top: 20px;
+
+            &__name {
+                font-size: 23px;
+                font-weight: 500;
+                margin-top: 10px;
+            }
+
+            &__ovrflow {
+                width: 300px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            &__bio {
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 20px;
+                width: 300px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    &-btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 50px;
+
+        &__change {
+            padding: 10px 30px;
+            border-radius: 7px;
+            border: solid 1px #6d39fe;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        &__logout {
+            padding: 10px 30px;
+            border-radius: 7px;
+            background: #6d39fe;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
 }

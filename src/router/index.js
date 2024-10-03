@@ -39,18 +39,29 @@ const router = createRouter({
 });
 
 
+
 router.beforeEach(async (to, from, next) => {
   try {
-    const user = null;
+    const user = await account.get();
     const isAuthenticated = !!user;
 
     if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
-      next({ name: 'auth' });
+      if (to.name !== 'auth') {
+        return next({ name: 'auth' });
+      } else {
+        return next();
+      }
+    } else if (to.name === 'auth' && isAuthenticated) {
+      return next({ name: 'home' });
     } else {
       next();
     }
   } catch (error) {
-    next({ name: 'auth' });
+    if (to.name !== 'auth') {
+      next({ name: 'auth' });
+    } else {
+      next();
+    }
   }
 });
 

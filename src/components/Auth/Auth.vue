@@ -1,48 +1,21 @@
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-import { account } from '@/lib/appwrite';
+import { useAuthStore } from '@/stores/authStore';
 
-const router = useRouter();
-const email = ref('');
-const password = ref('');
-const name = ref('');
-const isLogin = ref(true); // Переменная, чтобы отслеживать режим логина или регистрации
+const authStore = useAuthStore()
+const isLogin = ref(true); 
 
-const login = async () => {
-    try {
-        await account.createEmailPasswordSession(email.value, password.value);
-        // После успешного входа перенаправляем на главную страницу
-        router.push({ name: 'home' });
-    } catch (error) {
-        console.error('Ошибка при входе:', error);
-        alert('Ошибка входа. Проверьте данные.');
-    }
-};
-
-const register = async () => {
-    try {
-        await account.create(ID.unique(), email.value, password.value, name.value);
-        await login(); // После успешной регистрации выполняем вход
-    } catch (error) {
-        console.error('Ошибка при регистрации:', error);
-        alert('Ошибка при регистрации.');
-    }
-};
-
-const toggleAuth = () => {
-    isLogin.value = !isLogin.value; // Переключаем режим (логин/регистрация)
-};
+const toggleAuth = () => { isLogin.value = !isLogin.value; };
 </script>
 
 <template>
     <div class="auth">
-        <h4>{{ isLogin ? 'Login' : 'Register' }}</h4>
+        <h4 class="auth-title">{{ isLogin ? 'Login' : 'Register' }}</h4>
 
-        <form class="auth__form" @submit.prevent="isLogin ? login() : register()">
-            <input type="email" placeholder="Email" v-model="email" required />
-            <input type="password" placeholder="Password" v-model="password" required />
-            <input v-if="!isLogin" type="text" placeholder="Name" v-model="name" required />
+        <form class="auth__form" @submit.prevent="isLogin ? authStore.login() : authStore.register()">
+            <input type="email" placeholder="Email" v-model="authStore.email" required />
+            <input type="password" placeholder="Password" v-model="authStore.password" required />
+            <input v-if="!isLogin" type="text" placeholder="Name" v-model="authStore.name" required />
 
             <button type="submit">{{ isLogin ? 'Login' : 'Register' }}</button>
         </form>

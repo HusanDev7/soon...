@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nuxt/ui": "^2.18.6",
     "appwrite": "^15.0.0",
     "pinia": "^2.1.7",
     "sass": "^1.79.3",
