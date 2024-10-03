@@ -52,7 +52,7 @@ router.beforeEach(async (to, from, next) => {
         return next();
       }
     } else if (to.name === 'auth' && isAuthenticated) {
-      return next({ name: 'home' });
+      return next({ name: 'peoples' });
     } else {
       next();
     }

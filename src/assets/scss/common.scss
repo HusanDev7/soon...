@@ -20,13 +20,6 @@ input {
     outline: none;
 }
 
-.container {
-    width: 100%;
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
 // dynamic banner here
 
 .banner {
@@ -37,7 +30,7 @@ input {
     left: 0;
     width: 100%;
     height: 100dvh;
-    background-image: url(@/assets/img/default_banner.jpg);
+    // background-image: url(@/assets/img/default_banner.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

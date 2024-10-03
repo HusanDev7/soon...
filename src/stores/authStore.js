@@ -6,7 +6,8 @@ export const useAuthStore = defineStore('Auth', {
     email: '',
     password: '',
     name: '',
-    loggedInUser: null,  // Добавляем состояние для текущего пользователя
+    loggedInUser: null,
+    currentBanner: null,
   }),
   actions: {
     async login() {
@@ -41,6 +42,10 @@ export const useAuthStore = defineStore('Auth', {
         console.error(e, 'something worng with logout ');
         return false;
       }
+    },
+
+    setBanner(banner) {
+      this.currentBanner = banner
     }
   },
   getters: {}
