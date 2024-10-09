@@ -12,7 +12,7 @@ import banner5 from "@/assets/img/banner-5.jpg";
 
 const router = useRouter();
 const authStore = useAuthStore();
-
+const active = ref(1)
 const banners = ref([
     { banner: default_banner },
     { banner: banner1 },
@@ -22,10 +22,8 @@ const banners = ref([
     { banner: banner5 },
 ]);
 
-
-const selectBanner = (banner) => {
-    authStore.setBanner(banner)
-};
+const toggle = (index) => { active.value = index }
+const selectBanner = (banner) => { authStore.setBanner(banner) };
 
 const handelogout = async () => {
     const succes = await authStore.logout();
@@ -54,8 +52,8 @@ const handelogout = async () => {
 
         <h4 class="settings__title">Change background</h4>
         <div class="settings__bg">
-            <div class="settings__bg-banner" v-for="(item, index) in banners" :key="index" @click="selectBanner(item.banner)">
-                <img :src="item.banner" alt="banners">
+            <div class="settings__bg-banner" v-for="(item, index) in banners" :key="index" @click="selectBanner(item.banner), toggle(index)">
+                <img :class="{ active: active === index }" :src="item.banner" alt="banners">
             </div>
         </div>
     </div>
