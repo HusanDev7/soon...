@@ -36,24 +36,27 @@ const mode = inject('mode');
         </div>
         <span class="chatList__line"></span>
 
-        <!-- here user chatList -->
+        <!-- here users chatList -->
         <div class="chatList__user">
-            <div>
-                <div class="chatList__user-users">
-                    <div class="chatList__user-users-info">
-                        <img class="chatList__user-users-info_img"
-                            src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="">
-                        <div>
-                            <h6 class="chatList__user-users-info_name">Abram Culhane</h6>
+            <RouterLink to="/chat/">
+                <div>
+                    <div class="chatList__user-users">
+                        <div class="chatList__user-users-info">
+                            <img class="chatList__user-users-info_img"
+                                src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="">
+                            <div>
+                                <h6 class="chatList__user-users-info_name">Abram Culhane</h6>
+                            </div>
+                        </div>
+
+                        <div class="chatList__notf">
+                            <span class="chatList__notf-sms">4</span>
                         </div>
                     </div>
 
-                    <div class="chatList__notf">
-                        <span class="chatList__notf-sms">4</span>
-                    </div>
+                    <span class="chatList__line"></span>
                 </div>
-                <span class="chatList__line"></span>
-            </div>
+            </RouterLink>
         </div>
     </div>
 </template>

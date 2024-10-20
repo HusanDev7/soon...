@@ -1,0 +1,122 @@
+.chat {
+    width: 1200px;
+    height: 498px;
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-mini__first {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            gap: 20px;
+
+            &-img {
+                & img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &-mini__second {
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+            gap: 25px;
+
+            &-progrees {
+                cursor: progress;
+            }
+
+            &-pointer {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #2f313d;
+    }
+    // head end body start
+
+    &__body {
+        width: 100%;
+        overflow-y: auto;
+        height: 370px;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #a3a0a0;
+            border-radius: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            cursor: pointer;
+            background: #6d39fe;
+        }
+
+        &-welcome {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50dvh;
+
+            & h4 {
+                font-size: 22px;
+            }
+        }
+    }
+
+    // body end footer start
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 10px 0;
+
+        & input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0 20px;
+            background: none;
+            margin-left: 20px;
+            color: #fff;
+        }
+
+        &-clip {
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        &-sticker {
+            cursor: pointer;
+        }
+        &-send {
+            cursor: pointer;
+        }
+
+        &-box {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            margin: 0 15px 0;
+        }
+    }
+}
