@@ -36,8 +36,27 @@ import IconSend from '@/components/UI/icons/IconSend.vue';
         <!-- it's chat's body -->
         <div>
             <div class="chat__body">
-                <div class="chat__body-welcome">
-                    <h4>Start Chatting  Welcome to Chat by | Husan</h4>
+
+                <!-- <div class="chat__body-welcome">
+                    <h4>Start Chatting Welcome to Chat by | Husan</h4>
+                </div> -->
+
+                <!-- User Message (align left) -->
+                <div class="left">
+                    <img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="User Avatar"
+                        class="chat__avatar chat__avatar--left">
+                    <div class="chat__message chat__message--left">
+                        <span>User: Hello</span>
+                    </div>
+                </div>
+
+                <!-- Self Message (align right) -->
+                <div class="right">
+                    <div class="chat__message chat__message--right">
+                        <span>Hello me</span>
+                    </div>
+                    <img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="Self Avatar"
+                        class="chat__avatar chat__avatar--right">
                 </div>
             </div>
         </div>
@@ -48,7 +67,7 @@ import IconSend from '@/components/UI/icons/IconSend.vue';
             <span class="chat__line"></span>
             <div class="chat__footer">
                 <IconClip :size="28" class="chat__footer-clip" />
-                <input type="text" placeholder="Write a massage ..." required>
+                <input type="text" placeholder="Write a message ..." required>
                 <div class="chat__footer-box">
                     <IconSticker :size="25" class="chat__footer-sticker" />
                     <IconSend :size="25" class="chat__footer-send" />

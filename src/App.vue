@@ -8,9 +8,7 @@ const authStore = useAuthStore()
 
 const mode = ref(false);
 provide('mode', mode);
-provide('toggle_mode', () => {
-  mode.value = !mode.value;
-});
+provide('toggle_mode', () => { mode.value = !mode.value; });
 
 const currentBanner = ref(authStore.currentBanner || default_banner);
 

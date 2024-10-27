@@ -13,13 +13,11 @@
             margin-left: 30px;
             gap: 20px;
 
-            &-img {
-                & img {
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50px;
-                    cursor: pointer;
-                }
+            &-img img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
             }
         }
 
@@ -45,12 +43,15 @@
         height: 1px;
         background: #2f313d;
     }
-    // head end body start
 
     &__body {
         width: 100%;
         overflow-y: auto;
         height: 370px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
 
         &::-webkit-scrollbar {
             width: 3px;
@@ -74,49 +75,98 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 50dvh;
+            height: 50vh;
 
-            & h4 {
+            h4 {
                 font-size: 22px;
             }
         }
-    }
 
-    // body end footer start
+        .chat__message {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #fff;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &--left {
+                background: rgba(255, 255, 255, 0.27);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(6.6px);
+                -webkit-backdrop-filter: blur(6.6px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 12px 12px 12px 4px;
+            }
+
+            &--right {
+                background-color: #6e3aff;
+                border: 1px solid rgba(9, 3, 82, 0.35);
+                border-radius: 12px 12px 4px 12px;
+            }
+        }
+
+        .chat__avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            &--left {
+                margin-right: 8px;
+            }
+
+            &--right {
+                margin-left: 8px;
+            }
+        }
+    }
 
     &__footer {
         display: flex;
         align-items: center;
         width: 100%;
-        margin: 10px 0;
+        margin: 15px 15px;
 
-        & input {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 20px 0 20px;
-            background: none;
-            margin-left: 20px;
+        input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
             color: #fff;
+            margin-left: 20px;
+            background: none;
         }
 
-        &-clip {
-            cursor: pointer;
-            margin-left: 8px;
-        }
-        &-sticker {
-            cursor: pointer;
-        }
+        &-clip,
+        &-sticker,
         &-send {
             cursor: pointer;
+            color: #fff;
         }
 
         &-box {
             display: flex;
             align-items: center;
             gap: 35px;
-            margin: 0 15px 0;
+            margin: 0 45px;
         }
     }
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    text-align: right;
 }

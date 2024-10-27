@@ -1,5 +1,6 @@
 <script setup>
 import { inject } from "vue";
+import { useAuthStore } from "@/stores/authStore";
 
 // import Icons here
 import IconDot from '@/components/UI/icons/IconDot.vue';
@@ -7,7 +8,7 @@ import IconSearch from '@/components/UI/icons/IconSearch.vue';
 import IconPlus from '@/components/UI/icons/IconPlus.vue';
 
 const mode = inject('mode');
-
+const authStore = useAuthStore()
 </script>
 
 <template>
@@ -19,7 +20,7 @@ const mode = inject('mode');
                     src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="">
 
                 <div class="chatList__avatar-info">
-                    <h5 class="chatList__avatar-name">Carner Done</h5>
+                    <h5 class="chatList__avatar-name">{{ authStore.getUserName }}</h5>
                     <p class="chatList__avatar-desc">Web Developer</p>
                 </div>
             </div>

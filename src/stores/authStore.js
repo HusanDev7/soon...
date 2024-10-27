@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 import { account, ID } from '@/lib/appwrite';
 
 export const useAuthStore = defineStore('Auth', {
@@ -7,47 +7,47 @@ export const useAuthStore = defineStore('Auth', {
     password: '',
     name: '',
     loggedInUser: null,
-    currentBanner: null,
+    currentBanner: null
   }),
   actions: {
     async login() {
       try {
-        console.log("Email:", this.email);
-        console.log("Password:", this.password);
         await account.createEmailPasswordSession(this.email, this.password);
-        this.loggedInUser = this.email;  // Устанавливаем текущего пользователя после успешного входа
+        const user = await account.get();
+        this.loggedInUser = { name: user.name || this.name };
       } catch (e) {
-        console.error(e, 'something is wrong with login');
+        console.error(e.message || e, 'что-то пошло не так при входе');
       }
     },
 
     async register() {
       try {
-        console.log('name:', this.name);
-        console.log("Email:", this.email);
-        console.log("Password:", this.password);
         await account.create(ID.unique(), this.email, this.password, this.name);
         await this.login();
       } catch (e) {
-        console.error(e, 'something wrong with register');
+        console.error(e.message || e, 'что-то пошло не так при регистрации');
       }
     },
 
     async logout() {
       try {
         await account.deleteSession('current');
-        this.loggedInUser = null; 
-        return true;
+        this.loggedInUser = null;
       } catch (e) {
-        console.error(e, 'something worng with logout ');
-        return false;
+        console.error(e.message || e, 'что-то пошло не так при выходе');
       }
     },
 
     setBanner(banner) {
-      this.currentBanner = banner
+      this.currentBanner = banner;
     }
   },
-  getters: {}
-});
+  getters: {
+    getUserName() {
+      return this.loggedInUser ? this.loggedInUser.name : this.name || "Anonymous";
+    }
+  },
 
+  persist: true
+
+});
